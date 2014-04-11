@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB2F801F18F8899100F0B704 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F801E18F8899100F0B704 /* Foundation.framework */; };
+		DB2F802118F8899100F0B704 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F802018F8899100F0B704 /* CoreGraphics.framework */; };
+		DB2F802318F8899100F0B704 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F802218F8899100F0B704 /* UIKit.framework */; };
+		DB2F802918F8899100F0B704 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB2F802718F8899100F0B704 /* InfoPlist.strings */; };
+		DB2F802B18F8899100F0B704 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2F802A18F8899100F0B704 /* main.m */; };
+		DB2F802F18F8899100F0B704 /* TABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2F802E18F8899100F0B704 /* TABAppDelegate.m */; };
+		DB2F803218F8899100F0B704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB2F803018F8899100F0B704 /* Main.storyboard */; };
+		DB2F803518F8899100F0B704 /* TABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2F803418F8899100F0B704 /* TABViewController.m */; };
+		DB2F803718F8899100F0B704 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB2F803618F8899100F0B704 /* Images.xcassets */; };
+		DB2F803E18F8899100F0B704 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F803D18F8899100F0B704 /* XCTest.framework */; };
+		DB2F803F18F8899100F0B704 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F801E18F8899100F0B704 /* Foundation.framework */; };
+		DB2F804018F8899100F0B704 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F802218F8899100F0B704 /* UIKit.framework */; };
+		DB2F804818F8899100F0B704 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB2F804618F8899100F0B704 /* InfoPlist.strings */; };
+		DB2F804A18F8899100F0B704 /* File_MutatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2F804918F8899100F0B704 /* File_MutatorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB2F804118F8899100F0B704 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB2F801318F8899100F0B704 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB2F801A18F8899100F0B704;
+			remoteInfo = "File Mutator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB2F801B18F8899100F0B704 /* File Mutator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "File Mutator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB2F801E18F8899100F0B704 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DB2F802018F8899100F0B704 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DB2F802218F8899100F0B704 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DB2F802618F8899100F0B704 /* File Mutator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "File Mutator-Info.plist"; sourceTree = "<group>"; };
+		DB2F802818F8899100F0B704 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB2F802A18F8899100F0B704 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB2F802C18F8899100F0B704 /* File Mutator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "File Mutator-Prefix.pch"; sourceTree = "<group>"; };
+		DB2F802D18F8899100F0B704 /* TABAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TABAppDelegate.h; sourceTree = "<group>"; };
+		DB2F802E18F8899100F0B704 /* TABAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TABAppDelegate.m; sourceTree = "<group>"; };
+		DB2F803118F8899100F0B704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB2F803318F8899100F0B704 /* TABViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TABViewController.h; sourceTree = "<group>"; };
+		DB2F803418F8899100F0B704 /* TABViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TABViewController.m; sourceTree = "<group>"; };
+		DB2F803618F8899100F0B704 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB2F803C18F8899100F0B704 /* File MutatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "File MutatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB2F803D18F8899100F0B704 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DB2F804518F8899100F0B704 /* File MutatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "File MutatorTests-Info.plist"; sourceTree = "<group>"; };
+		DB2F804718F8899100F0B704 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB2F804918F8899100F0B704 /* File_MutatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = File_MutatorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB2F801818F8899100F0B704 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB2F802118F8899100F0B704 /* CoreGraphics.framework in Frameworks */,
+				DB2F802318F8899100F0B704 /* UIKit.framework in Frameworks */,
+				DB2F801F18F8899100F0B704 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB2F803918F8899100F0B704 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB2F803E18F8899100F0B704 /* XCTest.framework in Frameworks */,
+				DB2F804018F8899100F0B704 /* UIKit.framework in Frameworks */,
+				DB2F803F18F8899100F0B704 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB2F801218F8899100F0B704 = {
+			isa = PBXGroup;
+			children = (
+				DB2F802418F8899100F0B704 /* File Mutator */,
+				DB2F804318F8899100F0B704 /* File MutatorTests */,
+				DB2F801D18F8899100F0B704 /* Frameworks */,
+				DB2F801C18F8899100F0B704 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB2F801C18F8899100F0B704 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB2F801B18F8899100F0B704 /* File Mutator.app */,
+				DB2F803C18F8899100F0B704 /* File MutatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB2F801D18F8899100F0B704 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB2F801E18F8899100F0B704 /* Foundation.framework */,
+				DB2F802018F8899100F0B704 /* CoreGraphics.framework */,
+				DB2F802218F8899100F0B704 /* UIKit.framework */,
+				DB2F803D18F8899100F0B704 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB2F802418F8899100F0B704 /* File Mutator */ = {
+			isa = PBXGroup;
+			children = (
+				DB2F802D18F8899100F0B704 /* TABAppDelegate.h */,
+				DB2F802E18F8899100F0B704 /* TABAppDelegate.m */,
+				DB2F803018F8899100F0B704 /* Main.storyboard */,
+				DB2F803318F8899100F0B704 /* TABViewController.h */,
+				DB2F803418F8899100F0B704 /* TABViewController.m */,
+				DB2F803618F8899100F0B704 /* Images.xcassets */,
+				DB2F802518F8899100F0B704 /* Supporting Files */,
+			);
+			path = "File Mutator";
+			sourceTree = "<group>";
+		};
+		DB2F802518F8899100F0B704 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB2F802618F8899100F0B704 /* File Mutator-Info.plist */,
+				DB2F802718F8899100F0B704 /* InfoPlist.strings */,
+				DB2F802A18F8899100F0B704 /* main.m */,
+				DB2F802C18F8899100F0B704 /* File Mutator-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB2F804318F8899100F0B704 /* File MutatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB2F804918F8899100F0B704 /* File_MutatorTests.m */,
+				DB2F804418F8899100F0B704 /* Supporting Files */,
+			);
+			path = "File MutatorTests";
+			sourceTree = "<group>";
+		};
+		DB2F804418F8899100F0B704 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB2F804518F8899100F0B704 /* File MutatorTests-Info.plist */,
+				DB2F804618F8899100F0B704 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB2F801A18F8899100F0B704 /* File Mutator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB2F804D18F8899100F0B704 /* Build configuration list for PBXNativeTarget "File Mutator" */;
+			buildPhases = (
+				DB2F801718F8899100F0B704 /* Sources */,
+				DB2F801818F8899100F0B704 /* Frameworks */,
+				DB2F801918F8899100F0B704 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "File Mutator";
+			productName = "File Mutator";
+			productReference = DB2F801B18F8899100F0B704 /* File Mutator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB2F803B18F8899100F0B704 /* File MutatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB2F805018F8899100F0B704 /* Build configuration list for PBXNativeTarget "File MutatorTests" */;
+			buildPhases = (
+				DB2F803818F8899100F0B704 /* Sources */,
+				DB2F803918F8899100F0B704 /* Frameworks */,
+				DB2F803A18F8899100F0B704 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB2F804218F8899100F0B704 /* PBXTargetDependency */,
+			);
+			name = "File MutatorTests";
+			productName = "File MutatorTests";
+			productReference = DB2F803C18F8899100F0B704 /* File MutatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB2F801318F8899100F0B704 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TAB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "T Blank";
+				TargetAttributes = {
+					DB2F803B18F8899100F0B704 = {
+						TestTargetID = DB2F801A18F8899100F0B704;
+					};
+				};
+			};
+			buildConfigurationList = DB2F801618F8899100F0B704 /* Build configuration list for PBXProject "File Mutator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB2F801218F8899100F0B704;
+			productRefGroup = DB2F801C18F8899100F0B704 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB2F801A18F8899100F0B704 /* File Mutator */,
+				DB2F803B18F8899100F0B704 /* File MutatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB2F801918F8899100F0B704 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB2F803718F8899100F0B704 /* Images.xcassets in Resources */,
+				DB2F802918F8899100F0B704 /* InfoPlist.strings in Resources */,
+				DB2F803218F8899100F0B704 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB2F803A18F8899100F0B704 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB2F804818F8899100F0B704 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB2F801718F8899100F0B704 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB2F803518F8899100F0B704 /* TABViewController.m in Sources */,
+				DB2F802F18F8899100F0B704 /* TABAppDelegate.m in Sources */,
+				DB2F802B18F8899100F0B704 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB2F803818F8899100F0B704 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB2F804A18F8899100F0B704 /* File_MutatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB2F804218F8899100F0B704 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB2F801A18F8899100F0B704 /* File Mutator */;
+			targetProxy = DB2F804118F8899100F0B704 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB2F802718F8899100F0B704 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB2F802818F8899100F0B704 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DB2F803018F8899100F0B704 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB2F803118F8899100F0B704 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB2F804618F8899100F0B704 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB2F804718F8899100F0B704 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB2F804B18F8899100F0B704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB2F804C18F8899100F0B704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB2F804E18F8899100F0B704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "File Mutator/File Mutator-Prefix.pch";
+				INFOPLIST_FILE = "File Mutator/File Mutator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DB2F804F18F8899100F0B704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "File Mutator/File Mutator-Prefix.pch";
+				INFOPLIST_FILE = "File Mutator/File Mutator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DB2F805118F8899100F0B704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/File Mutator.app/File Mutator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "File Mutator/File Mutator-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "File MutatorTests/File MutatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DB2F805218F8899100F0B704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/File Mutator.app/File Mutator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "File Mutator/File Mutator-Prefix.pch";
+				INFOPLIST_FILE = "File MutatorTests/File MutatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB2F801618F8899100F0B704 /* Build configuration list for PBXProject "File Mutator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB2F804B18F8899100F0B704 /* Debug */,
+				DB2F804C18F8899100F0B704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB2F804D18F8899100F0B704 /* Build configuration list for PBXNativeTarget "File Mutator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB2F804E18F8899100F0B704 /* Debug */,
+				DB2F804F18F8899100F0B704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DB2F805018F8899100F0B704 /* Build configuration list for PBXNativeTarget "File MutatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB2F805118F8899100F0B704 /* Debug */,
+				DB2F805218F8899100F0B704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB2F801318F8899100F0B704 /* Project object */;
+}
