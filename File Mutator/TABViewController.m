@@ -8,21 +8,7 @@
 
 #import "TABViewController.h"
 
-static NSURL *TABGenerateFile(NSURL *rootDirectory)
-{
-    // If you call this function a lot, you're gonna want to create an NSDateFormatter singleton. They're expensive to create.
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateStyle = NSDateFormatterFullStyle;
-    dateFormatter.timeStyle = NSDateFormatterLongStyle;
-    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
-    
-    NSData *randomData = [dateString dataUsingEncoding:NSUTF8StringEncoding];
-    NSURL *fileURL = [rootDirectory URLByAppendingPathComponent:dateString];
-    [randomData writeToURL:fileURL
-                   options:NSDataWritingFileProtectionNone
-                     error:nil];
-    return fileURL;
-}
+#import "TABFileMutator.h"
 
 @interface TABViewController ()
 {
