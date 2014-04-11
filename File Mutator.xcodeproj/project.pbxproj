@@ -21,6 +21,7 @@
 		DB2F804018F8899100F0B704 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F802218F8899100F0B704 /* UIKit.framework */; };
 		DB2F804818F8899100F0B704 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB2F804618F8899100F0B704 /* InfoPlist.strings */; };
 		DB2F804A18F8899100F0B704 /* File_MutatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2F804918F8899100F0B704 /* File_MutatorTests.m */; };
+		DB2F805518F88D8800F0B704 /* TABFileMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2F805418F88D8800F0B704 /* TABFileMutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		DB2F804518F8899100F0B704 /* File MutatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "File MutatorTests-Info.plist"; sourceTree = "<group>"; };
 		DB2F804718F8899100F0B704 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB2F804918F8899100F0B704 /* File_MutatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = File_MutatorTests.m; sourceTree = "<group>"; };
+		DB2F805318F88D8800F0B704 /* TABFileMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABFileMutator.h; sourceTree = "<group>"; };
+		DB2F805418F88D8800F0B704 /* TABFileMutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABFileMutator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +117,11 @@
 			children = (
 				DB2F802D18F8899100F0B704 /* TABAppDelegate.h */,
 				DB2F802E18F8899100F0B704 /* TABAppDelegate.m */,
-				DB2F803018F8899100F0B704 /* Main.storyboard */,
+				DB2F805318F88D8800F0B704 /* TABFileMutator.h */,
+				DB2F805418F88D8800F0B704 /* TABFileMutator.m */,
 				DB2F803318F8899100F0B704 /* TABViewController.h */,
 				DB2F803418F8899100F0B704 /* TABViewController.m */,
+				DB2F803018F8899100F0B704 /* Main.storyboard */,
 				DB2F803618F8899100F0B704 /* Images.xcassets */,
 				DB2F802518F8899100F0B704 /* Supporting Files */,
 			);
@@ -252,6 +257,7 @@
 			files = (
 				DB2F803518F8899100F0B704 /* TABViewController.m in Sources */,
 				DB2F802F18F8899100F0B704 /* TABAppDelegate.m in Sources */,
+				DB2F805518F88D8800F0B704 /* TABFileMutator.m in Sources */,
 				DB2F802B18F8899100F0B704 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,19 @@
 
 #import "TABViewController.h"
 
+static NSURL *TABGenerateFile(NSURL *rootDirectory)
+{
+    NSMutableData *randomData = [[NSKeyedArchiver archivedDataWithRootObject:[NSDate date]] mutableCopy];
+    int randomNumber = arc4random_uniform(UINT32_MAX);
+    NSString *randomNumberString = [@(randomNumber) stringValue];
+    [randomData appendData:[randomNumberString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURL *fileURL = [rootDirectory URLByAppendingPathComponent:randomNumberString];
+    [randomData writeToURL:fileURL
+                atomically:YES];
+    return fileURL;
+}
+
 @interface TABViewController ()
 
 @end
@@ -17,13 +30,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	
+    // Generate a random file in the Documents directory
+    NSString *pathToDocumentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSURL *documentsDirectoryURL = [NSURL URLWithString:pathToDocumentsDirectory];
+    NSURL *randomFileURL = TABGenerateFile(documentsDirectoryURL);
 }
 
 @end
