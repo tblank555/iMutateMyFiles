@@ -27,8 +27,6 @@ typedef NS_ENUM(NSUInteger, TABFileMutatorMutationType)
     TABFileMutatorMutationTypeAppend,
     /** A constant representing the delete mutation type, where data is randomly deleted from a file. */
     TABFileMutatorMutationTypeDelete,
-    /** A constant representing the replace mutation type, where data is randomly replaced within a file. */
-    TABFileMutatorMutationTypeReplace
 };
 
 /**
