@@ -10,12 +10,23 @@
 NSString * const TABFileMutatorErrorDomain;
 
 /** An enumeration of the error codes that TABFileMutator can produce. */
-NS_ENUM(NSUInteger, TABFileMutatorErrorType)
+typedef NS_ENUM(NSUInteger, TABFileMutatorErrorType)
 {
     /** The URL passed in to the mutation method points to a directory, not a file. */
     TABFileMutatorURLPointsToDirectoryError = 1,
     /** The URL passed in points to a file that doesn't exist. */
     TABFileMutatorFileDoesNotExistError
+};
+
+/** An enumeration of the types of mutations that TABFileMutator can perform. */
+typedef NS_ENUM(NSUInteger, TABFileMutatorMutationType)
+{
+    /** A constant representing the append mutation type, where random data is appended to the end of a file. */
+    TABFileMutatorMutationTypeAppend,
+    /** A constant representing the delete mutation type, where data is randomly deleted from a file. */
+    TABFileMutatorMutationTypeDelete,
+    /** A constant representing the replace mutation type, where data is randomly replaced within a file. */
+    TABFileMutatorMutationTypeReplace
 };
 
 /**
@@ -38,9 +49,11 @@ NSURL *TABGenerateFile(NSURL *rootDirectory);
 /**
  Mutates a file by appending a random integer (uint32) to the end of the file.
  @param fileURL An `NSURL` object that points to the file to be mutated.
+ @param mutationType A constant that determines the type of mutation to perform.
  @param error A pointer to an `NSError` object that will contain an `NSError` in the event of an error.
  @result A Boolean value indicating whether or not the mutation operation was successful. If this value is `NO`, `error` will point to an `NSError` object describing the error.
+ @see `<TABFileMutatorMutationType>`
  */
-+ (BOOL)mutateFile:(NSURL *)fileURL error:(NSError **)error;
++ (BOOL)mutateFile:(NSURL *)fileURL mutationType:(TABFileMutatorMutationType)mutationType error:(NSError **)error;
 
 @end

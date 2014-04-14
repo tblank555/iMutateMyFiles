@@ -66,7 +66,9 @@
     // Mutate the file
     NSError *error;
     BOOL success = [TABFileMutator mutateFile:testFileURL
+                                 mutationType:TABFileMutatorMutationTypeAppend
                                         error:&error];
+    
     XCTAssertTrue(success, @"+ [TABFileMutator mutateFile:error:] failed to mutate the test file.");
     XCTAssertNil(error, @"+ [TABFileMutator mutateFile:error:] produced an error: %@", error.localizedDescription);
     

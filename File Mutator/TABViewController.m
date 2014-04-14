@@ -44,7 +44,7 @@
 - (IBAction)mutate:(UIButton *)sender
 {
     NSError *error;
-    if ([TABFileMutator mutateFile:_testFileURL error:&error])
+    if ([TABFileMutator mutateFile:_testFileURL mutationType:TABFileMutatorMutationTypeAppend error:&error])
     {
         _fileTextField.text = [TABFileMutator readFileAsUTF8String:_testFileURL
                                                              error:&error];

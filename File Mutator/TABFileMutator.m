@@ -64,7 +64,7 @@ NSURL *TABGenerateFile(NSURL *rootDirectory)
     return fileContents;
 }
 
-+ (BOOL)mutateFile:(NSURL *)fileURL error:(NSError **)error
++ (BOOL)mutateFile:(NSURL *)fileURL mutationType:(TABFileMutatorMutationType)mutationType error:(NSError **)error
 {
     // Read file into memory
     NSError *readError;
@@ -76,19 +76,24 @@ NSURL *TABGenerateFile(NSURL *rootDirectory)
         return NO;
     }
     
-    // Generate a string of random numbers
-    int randomNumber = arc4random_uniform(UINT32_MAX);
-    NSString *randomNumberString = [@(randomNumber) stringValue];
+    if (mutationType == TABFileMutatorMutationTypeAppend)
+    {
+        // Generate a string of random numbers
+        int randomNumber = arc4random_uniform(UINT32_MAX);
+        NSString *randomNumberString = [@(randomNumber) stringValue];
+        
+        // Append that string to the end of the file contents
+        fileContents = [fileContents stringByAppendingString:randomNumberString];
+        
+        // Write the file back to disk
+        NSData *newFileData = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
+        [newFileData writeToURL:fileURL
+                     atomically:YES];
+        
+        return YES;
+    }
     
-    // Append that string to the end of the file contents
-    fileContents = [fileContents stringByAppendingString:randomNumberString];
-    
-    // Write the file back to disk
-    NSData *newFileData = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
-    [newFileData writeToURL:fileURL
-                 atomically:YES];
-    
-    return YES;
+    return NO;
 }
 
 @end
