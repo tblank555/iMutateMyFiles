@@ -14,8 +14,10 @@ typedef NS_ENUM(NSUInteger, TABFileMutatorErrorType)
 {
     /** The URL passed in to the mutation method points to a directory, not a file. */
     TABFileMutatorURLPointsToDirectoryError = 1,
-    /** The URL passed in points to a file that doesn't exist. */
-    TABFileMutatorFileDoesNotExistError
+    /** The file you are attempting to mutate does not exist. */
+    TABFileMutatorFileDoesNotExistError,
+    /** The file you are attempting to delete data from is too short. */
+    TABFileMutatorFileIsTooShort
 };
 
 /** An enumeration of the types of mutations that TABFileMutator can perform. */

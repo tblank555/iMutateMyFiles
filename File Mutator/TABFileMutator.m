@@ -92,6 +92,39 @@ NSURL *TABGenerateFile(NSURL *rootDirectory)
         
         return YES;
     }
+    else if (mutationType == TABFileMutatorMutationTypeDelete)
+    {
+        uint32_t beginDeletionIndex;
+        uint32_t deletionLength;
+        
+        if (fileContents.length <= 1)
+        {
+            *error = [NSError errorWithDomain:TABFileMutatorErrorDomain
+                                         code:TABFileMutatorFileIsTooShort
+                                     userInfo:@{ NSLocalizedDescriptionKey : @"The NSURL passed in points to a file that is too short to delete characters from." }];
+            return NO;
+        }
+        
+        // This do-while loop prevents the entire contents of the file from being deleted
+        do
+        {
+            // Choose a random place in the file to begin deleting data from
+            beginDeletionIndex = arc4random_uniform(fileContents.length);
+            
+            // Choose a random amount of data to begin deleting from the file
+            deletionLength = arc4random_uniform([fileContents substringFromIndex:beginDeletionIndex].length);
+        }
+        while ((beginDeletionIndex == 0 && deletionLength >= fileContents.length) || deletionLength == 0);
+        
+        NSString *newFileContents = [NSString stringWithFormat:@"%@%@", [fileContents substringToIndex:beginDeletionIndex], [fileContents substringFromIndex:(beginDeletionIndex + deletionLength)]];
+        
+        // Write the new string back to disk
+        NSData *newFileData = [newFileContents dataUsingEncoding:NSUTF8StringEncoding];
+        [newFileData writeToURL:fileURL
+                     atomically:YES];
+        
+        return YES;
+    }
     
     return NO;
 }

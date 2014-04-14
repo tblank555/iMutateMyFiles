@@ -41,13 +41,16 @@
     }
 }
 
-- (IBAction)mutate:(UIButton *)sender
+- (void)__mutateFile:(NSURL *)file mutationType:(TABFileMutatorMutationType)mutationType
 {
     NSError *error;
-    if ([TABFileMutator mutateFile:_testFileURL mutationType:TABFileMutatorMutationTypeAppend error:&error])
+    if ([TABFileMutator mutateFile:file
+                      mutationType:mutationType
+                             error:&error])
     {
-        _fileTextField.text = [TABFileMutator readFileAsUTF8String:_testFileURL
+        _fileTextField.text = [TABFileMutator readFileAsUTF8String:file
                                                              error:&error];
+        
         if (error)
         {
             _fileTextField.text = error.localizedDescription;
@@ -57,7 +60,18 @@
     {
         _fileTextField.text = error.localizedDescription;
     }
-    
+}
+
+- (IBAction)append:(UIButton *)sender
+{
+    [self __mutateFile:_testFileURL
+          mutationType:TABFileMutatorMutationTypeAppend];
+}
+
+- (IBAction)delete:(UIButton *)sender
+{
+    [self __mutateFile:_testFileURL
+          mutationType:TABFileMutatorMutationTypeDelete];
 }
 
 @end
