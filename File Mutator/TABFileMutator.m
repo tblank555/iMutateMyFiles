@@ -79,7 +79,7 @@ NSURL *TABGenerateFile(NSURL *rootDirectory)
     if (mutationType == TABFileMutatorMutationTypeAppend)
     {
         // Generate a string of random numbers
-        int randomNumber = arc4random_uniform(UINT32_MAX);
+        uint32_t randomNumber = arc4random_uniform(UINT32_MAX);
         NSString *randomNumberString = [@(randomNumber) stringValue];
         
         // Append that string to the end of the file contents
