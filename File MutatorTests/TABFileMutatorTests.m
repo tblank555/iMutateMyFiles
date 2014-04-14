@@ -16,18 +16,6 @@
 
 @implementation TABFileMutatorTests
 
-- (void)setUp
-{
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
 - (void)testGenerateFile
 {
     NSURL *documentsDirectory = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]];
@@ -43,6 +31,21 @@
                                                            isDirectory:&isDirectory];
     XCTAssertTrue(fileExists, @"TABGenerateFile() failed to create a file.");
     XCTAssertFalse(isDirectory, @"TABGenerateFile() generated a directory instead of a file.");
+}
+
+- (void)testReadFileAsUTF8String
+{
+    // Generate a test file with TABGenerateFile()
+    NSURL *documentsDirectory = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]];
+    NSURL *testFileURL = TABGenerateFile(documentsDirectory);
+    
+    NSError *error;
+    NSString *testFileContents = [TABFileMutator readFileAsUTF8String:testFileURL
+                                                                error:&error];
+    
+    XCTAssertNotNil(testFileContents, @"+ [TABFileMutator readFileAsUTF8String] returned a nil string.");
+    XCTAssertNil(error, @"+ [TABFileMutator readFileAsUTF8String] produced an error: %@", error.localizedDescription);
+    XCTAssertTrue(testFileContents.length > 0, @"+ [TABFileMutator readFileAsUTF8String] returned an empty string.");
 }
 
 @end
