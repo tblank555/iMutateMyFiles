@@ -6,11 +6,15 @@
 //  Copyright (c) 2014 T Blank. All rights reserved.
 //
 
+/** The error domain for errors produced by TABFileMutator */
 NSString * const TABFileMutatorErrorDomain;
 
+/** An enumeration of the error codes that TABFileMutator can produce. */
 NS_ENUM(NSUInteger, TABFileMutatorErrorType)
 {
+    /** The URL passed in to the mutation method points to a directory, not a file. */
     TABFileMutatorURLPointsToDirectoryError = 1,
+    /** The URL passed in points to a file that doesn't exist. */
     TABFileMutatorFileDoesNotExistError
 };
 
