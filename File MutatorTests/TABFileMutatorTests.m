@@ -43,9 +43,41 @@
     NSString *testFileContents = [TABFileMutator readFileAsUTF8String:testFileURL
                                                                 error:&error];
     
-    XCTAssertNotNil(testFileContents, @"+ [TABFileMutator readFileAsUTF8String] returned a nil string.");
-    XCTAssertNil(error, @"+ [TABFileMutator readFileAsUTF8String] produced an error: %@", error.localizedDescription);
-    XCTAssertTrue(testFileContents.length > 0, @"+ [TABFileMutator readFileAsUTF8String] returned an empty string.");
+    XCTAssertNotNil(testFileContents, @"+ [TABFileMutator readFileAsUTF8String:error:] returned a nil string.");
+    XCTAssertNil(error, @"+ [TABFileMutator readFileAsUTF8String:error:] produced an error: %@", error.localizedDescription);
+    XCTAssertTrue(testFileContents.length > 0, @"+ [TABFileMutator readFileAsUTF8String:error:] returned an empty string.");
+}
+
+- (void)testMutateFile
+{
+    // Generate a test file with TABGenerateFile()
+    NSURL *documentsDirectory = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]];
+    NSURL *testFileURL = TABGenerateFile(documentsDirectory);
+    
+    NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[testFileURL path]
+                                                                                    error:nil];
+    
+    XCTAssertNotNil(fileAttributes, @"NSFileManager failed to get the attributes of the test file before mutation.");
+    
+    uint64_t fileSizeBefore = [fileAttributes fileSize];
+    
+    XCTAssertTrue(fileSizeBefore > 0, @"Test file has 0 byte file size before mutation.");
+    
+    // Mutate the file
+    NSError *error;
+    BOOL success = [TABFileMutator mutateFile:testFileURL
+                                        error:&error];
+    XCTAssertTrue(success, @"+ [TABFileMutator mutateFile:error:] failed to mutate the test file.");
+    XCTAssertNil(error, @"+ [TABFileMutator mutateFile:error:] produced an error: %@", error.localizedDescription);
+    
+    fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[testFileURL path]
+                                                                      error:nil];
+    
+    XCTAssertNotNil(fileAttributes, @"NSFileManager failed to get the attributes of the test file after mutation.");
+    
+    uint64_t fileSizeAfter = [fileAttributes fileSize];
+    
+    XCTAssertTrue(fileSizeAfter > 0, @"Test file has 0 byte file size after mutation.");
 }
 
 @end
