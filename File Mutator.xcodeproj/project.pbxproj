@@ -20,8 +20,8 @@
 		DB2F803F18F8899100F0B704 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F801E18F8899100F0B704 /* Foundation.framework */; };
 		DB2F804018F8899100F0B704 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F802218F8899100F0B704 /* UIKit.framework */; };
 		DB2F804818F8899100F0B704 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB2F804618F8899100F0B704 /* InfoPlist.strings */; };
-		DB2F804A18F8899100F0B704 /* File_MutatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2F804918F8899100F0B704 /* File_MutatorTests.m */; };
 		DB2F805518F88D8800F0B704 /* TABFileMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2F805418F88D8800F0B704 /* TABFileMutator.m */; };
+		DB39BB9E18FC49B000F9B7FE /* TABFileMutatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB39BB9D18FC49B000F9B7FE /* TABFileMutatorTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +53,9 @@
 		DB2F803D18F8899100F0B704 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DB2F804518F8899100F0B704 /* File MutatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "File MutatorTests-Info.plist"; sourceTree = "<group>"; };
 		DB2F804718F8899100F0B704 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DB2F804918F8899100F0B704 /* File_MutatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = File_MutatorTests.m; sourceTree = "<group>"; };
 		DB2F805318F88D8800F0B704 /* TABFileMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABFileMutator.h; sourceTree = "<group>"; };
 		DB2F805418F88D8800F0B704 /* TABFileMutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABFileMutator.m; sourceTree = "<group>"; };
+		DB39BB9D18FC49B000F9B7FE /* TABFileMutatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABFileMutatorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 		DB2F804318F8899100F0B704 /* File MutatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				DB2F804918F8899100F0B704 /* File_MutatorTests.m */,
+				DB39BB9D18FC49B000F9B7FE /* TABFileMutatorTests.m */,
 				DB2F804418F8899100F0B704 /* Supporting Files */,
 			);
 			path = "File MutatorTests";
@@ -266,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB2F804A18F8899100F0B704 /* File_MutatorTests.m in Sources */,
+				DB39BB9E18FC49B000F9B7FE /* TABFileMutatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +463,7 @@
 				DB2F804F18F8899100F0B704 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB2F805018F8899100F0B704 /* Build configuration list for PBXNativeTarget "File MutatorTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +472,7 @@
 				DB2F805218F8899100F0B704 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
