@@ -114,6 +114,21 @@
     uint64_t fileSizeAfter = [fileAttributes fileSize];
     
     XCTAssertTrue(fileSizeAfter > 0, @"Test file has 0 byte file size after mutation.");
+    
+    // Attempt to delete characters from a single-character file
+    NSString *characterToWrite = @"•";
+    NSURL *testFile2URL = [documentsDirectory URLByAppendingPathComponent:@"testFile2"];
+    NSData *dataToWrite = [characterToWrite dataUsingEncoding:NSUTF8StringEncoding];
+    [dataToWrite writeToURL:testFile2URL
+                 atomically:YES];
+    
+    success = [TABFileMutator mutateFile:testFile2URL
+                            mutationType:TABFileMutatorMutationTypeDelete
+                                   error:&error];
+    
+    XCTAssertFalse(success, @"+ [TABFileMutator mutateFile:error:] managed to delete characters from a single-character file.");
+    XCTAssertNotNil(error, @"+ [TABFileMutator mutateFile:error:] failed to produce an error deleting characters from a single-character file.");
+    XCTAssertTrue(error.code == TABFileMutatorFileIsTooShort, @"+ [TABFileMutator mutateFile:error:] produced the wrong type of error deleting characters from a single-character file.");
 }
 
 @end
