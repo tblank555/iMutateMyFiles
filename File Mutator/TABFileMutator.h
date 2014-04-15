@@ -30,12 +30,16 @@ typedef NS_ENUM(NSUInteger, TABFileMutatorMutationType)
 };
 
 /**
- Generates a file with the current date and time as both its contents and name.
+ Generates a UTF-8-encoded file with the current date and time as both its contents and name.
  @param rootDirectory The directory in which to create the file.
  @result An `NSURL` object that points to the newly created file.
  */
 NSURL *TABGenerateFile(NSURL *rootDirectory);
 
+/**
+ `TABFileMutator` is a class that can be used to generate and randomly modify UTF-8-encoded files.
+ @discussion Its purpose is to demonstrate what happens when an app modifies and creates files. The `<TABGenerateFile()>` function generates a file in a given directory, the `<readFileAsUTF8String:error:>` class method reads files into memory, and the `<mutateFile:mutationType:error:>` class method mutates files by randomly adding or deleting content.
+ */
 @interface TABFileMutator : NSObject
 
 /**
@@ -47,7 +51,7 @@ NSURL *TABGenerateFile(NSURL *rootDirectory);
 + (NSString *)readFileAsUTF8String:(NSURL *)fileURL error:(NSError **)error;
 
 /**
- Mutates a file by appending a random integer (uint32) to the end of the file.
+ Mutates a UTF-8-encoded file either by appending a random integer (uint32) to the end of the file or by deleting a random range of characters.
  @param fileURL An `NSURL` object that points to the file to be mutated.
  @param mutationType A constant that determines the type of mutation to perform.
  @param error A pointer to an `NSError` object that will contain an `NSError` in the event of an error.
