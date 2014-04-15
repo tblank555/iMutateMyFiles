@@ -108,7 +108,8 @@ NSURL *TABGenerateFile(NSURL *rootDirectory)
         
         if (fileContents.length <= 1)
         {
-            if (error != NULL) {
+            if (error != NULL)
+            {
                 *error = [NSError errorWithDomain:TABFileMutatorErrorDomain
                                              code:TABFileMutatorFileIsTooShort
                                          userInfo:@{ NSLocalizedDescriptionKey : NSLocalizedString(@"The NSURL passed in points to a file that is too short to delete characters from.", nil) }];
