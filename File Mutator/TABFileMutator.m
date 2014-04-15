@@ -39,25 +39,34 @@ NSURL *TABGenerateFile(NSURL *rootDirectory)
             fileContents = [NSString stringWithContentsOfURL:fileURL
                                                     encoding:NSUTF8StringEncoding
                                                        error:&readError];
-            if (readError)
+            if (!fileContents)
             {
-                *error = readError;
+                if (error != NULL)
+                {
+                    *error = readError;
+                }
                 return nil;
             }
         }
         else
         {
-            *error = [NSError errorWithDomain:TABFileMutatorErrorDomain
-                                         code:TABFileMutatorURLPointsToDirectoryError
-                                     userInfo:@{ NSLocalizedDescriptionKey : @"The NSURL passed in points to a directory, not a file." }];
+            if (error != NULL)
+            {
+                *error = [NSError errorWithDomain:TABFileMutatorErrorDomain
+                                             code:TABFileMutatorURLPointsToDirectoryError
+                                         userInfo:@{ NSLocalizedDescriptionKey : NSLocalizedString(@"The NSURL passed in points to a directory, not a file.", nil) }];
+            }
             return nil;
         }
     }
     else
     {
-        *error = [NSError errorWithDomain:TABFileMutatorErrorDomain
-                                     code:TABFileMutatorFileDoesNotExistError
-                                 userInfo:@{ NSLocalizedDescriptionKey : @"The NSURL passed in points to a file that doesn't exist." }];
+        if (error != NULL)
+        {
+            *error = [NSError errorWithDomain:TABFileMutatorErrorDomain
+                                         code:TABFileMutatorFileDoesNotExistError
+                                     userInfo:@{ NSLocalizedDescriptionKey : NSLocalizedString(@"The NSURL passed in points to a file that doesn't exist.", nil) }];
+        }
         return nil;
     }
     
@@ -70,7 +79,7 @@ NSURL *TABGenerateFile(NSURL *rootDirectory)
     NSError *readError;
     NSString *fileContents = [[self class] readFileAsUTF8String:fileURL
                                                           error:&readError];
-    if (readError)
+    if (!fileContents && error != NULL)
     {
         *error = readError;
         return NO;
@@ -99,9 +108,11 @@ NSURL *TABGenerateFile(NSURL *rootDirectory)
         
         if (fileContents.length <= 1)
         {
-            *error = [NSError errorWithDomain:TABFileMutatorErrorDomain
-                                         code:TABFileMutatorFileIsTooShort
-                                     userInfo:@{ NSLocalizedDescriptionKey : @"The NSURL passed in points to a file that is too short to delete characters from." }];
+            if (error != NULL) {
+                *error = [NSError errorWithDomain:TABFileMutatorErrorDomain
+                                             code:TABFileMutatorFileIsTooShort
+                                         userInfo:@{ NSLocalizedDescriptionKey : NSLocalizedString(@"The NSURL passed in points to a file that is too short to delete characters from.", nil) }];
+            }
             return NO;
         }
         
